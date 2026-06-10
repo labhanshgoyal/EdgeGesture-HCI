@@ -1,0 +1,6 @@
+streamlit
+opencv-python-headless #capture webcam video and apply adversarial effects (noise, brightness) to frames. "Headless" means no GUI dependency — perfect for server/Streamlit use
+mediapipe
+numpy
+Pillow #For applying visual effects like lighting changes, glare, image overlays for the adversarial testing
+plotly #accuracy graphs, confusion matrices, real-time charts
