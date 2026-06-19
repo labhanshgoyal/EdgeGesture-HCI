@@ -18,7 +18,7 @@ st.set_page_config(page_title="Hand Gesture Recognition For Space Missions", lay
 def load_classifier():
     """Load the gesture classifier (cached so it only loads once)."""
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    model_path = os.path.join(base_dir, "models", "gesture_model.h5")
+    model_path = os.path.join(base_dir, "models", "gesture_model_robust.h5")
     encoder_path = os.path.join(base_dir, "models", "label_encoder.pkl")
     return GestureClassifier(model_path=model_path, encoder_path=encoder_path)
 
