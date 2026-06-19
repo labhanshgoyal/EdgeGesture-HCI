@@ -25,8 +25,16 @@ class GestureClassifier:
                 print(f"[Classifier] Failed to load model: {e}")
         
         if encoder_path and os.path.exists(encoder_path):
-            with open(encoder_path, 'rb') as f:
-                self.label_encoder=pickle.load(f)
+            try:
+                with open(encoder_path, 'rb') as f:
+                    self.label_encoder = pickle.load(f)
+            except ModuleNotFoundError as e:
+                # The pickled encoder depends on a module (e.g. scikit-learn) that's not installed.
+                print(f"[Classifier] Could not load label encoder due to missing dependency: {e}. Continuing without encoder.")
+                self.label_encoder = None
+            except Exception as e:
+                print(f"[Classifier] Failed to load label encoder: {e}")
+                self.label_encoder = None
 
     def update(self, landmarks_array): #Add new frame's landmarks to buffer
         if landmarks_array is None:
