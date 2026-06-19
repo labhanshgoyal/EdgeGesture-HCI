@@ -4,3 +4,4 @@ mediapipe
 numpy
 Pillow #For applying visual effects like lighting changes, glare, image overlays for the adversarial testing
 plotly #accuracy graphs, confusion matrices, real-time charts
+scikit-learn
