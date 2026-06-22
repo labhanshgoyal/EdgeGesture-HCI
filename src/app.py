@@ -104,7 +104,7 @@ with st.sidebar:
     camera_index = st.selectbox(
         "📷 Camera Source",
         options=[0, 1, 2],
-        index=0,
+        index=1,
         format_func=lambda x: f"Camera {x}" + (" (Built-in)" if x == 0 else " (USB)" if x == 1 else ""),
         help="0 = Built-in camera, 1 = USB webcam, 2 = Other"
     )
