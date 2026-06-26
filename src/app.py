@@ -11,6 +11,9 @@ from config import GESTURE_LABELS, GESTURE_TO_COMMAND, COLORS, MEDIAPIPE_CONFIG
 from hand_tracker import HandTracker
 from gesture_classifier import GestureClassifier
 
+from spacecraft_ui import SpacecraftUI
+from metrics_dashboard import MetricsDashboard
+
 st.set_page_config(page_title="Hand Gesture Recognition For Space Missions", layout="wide")
 
 # ─── Load Model ────────────────────────────────────────────────────
@@ -33,6 +36,8 @@ def load_tracker():
 
 classifier = load_classifier()
 tracker = load_tracker()
+spacecraft = SpacecraftUI()
+dashboard = MetricsDashboard()
 
 # ─── Session State for live accuracy tracking ─────────────────
 if "predictions" not in st.session_state:
@@ -192,6 +197,13 @@ if start_button:
             # Step 6: Display in Streamlit
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             camera_placeholder.image(frame_rgb, channels="RGB", width='stretch')
+
+            # ─── Spacecraft Cockpit ──────────────────────
+            st.markdown("---")
+            spacecraft.render_all(gesture, command)
+            # ─── Performance Dashboard ───────────────────
+            st.markdown("---")
+            dashboard.render_all(gesture, confidence if classifier.use_model else None)
 
             # Step 7: Update info panel
             with col_info:
