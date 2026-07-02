@@ -1,3 +1,14 @@
+---
+title: EdgeGesture-HCI
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: "1.58.0"
+app_file: src/app_cloud.py
+pinned: false
+---
+
 # 🚀 EdgeGesture-HCI
 
 ### Real-Time Contactless Hand Gesture Recognition for Spacecraft Control
