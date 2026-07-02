@@ -1,6 +1,6 @@
 # 🚀 EdgeGesture-HCI
 
-### Real-Time Contactless Hand Gesture Recognition for Spacecraft Control
+### A Hybrid CNN-GRU Architecture for Real-Time Hand Gesture Recognition in Microgravity Human-Computer Interaction
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
