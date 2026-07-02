@@ -29,7 +29,6 @@
 - [Results](#results)
 - [Adversarial Robustness](#adversarial-robustness)
 - [Tech Stack](#tech-stack)
-- [Team](#team)
 - [References](#references)
 
 ---
